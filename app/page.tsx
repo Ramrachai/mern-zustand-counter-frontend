@@ -1,10 +1,20 @@
 /* Components */
-import { Counter } from "./components/Counter/Counter";
+import ZusCounter from "@/app/components/ZusCounter/ZusCounter"
+import Inventory from "./components/Inventory";
+import Cart from "./components/Cart";
+import Statistics from "./components/Statistics";
+import Orders from "./components/Order";
 
 export default function IndexPage() {
-  return <Counter />;
+  return <>
+    <Inventory />
+    <ZusCounter />
+    <Cart />
+    <Statistics />
+    <Orders />
+  </>;
 }
 
 export const metadata = {
-  title: "Redux Toolkit",
+  title: "MERN + Zustand Counter app",
 };
