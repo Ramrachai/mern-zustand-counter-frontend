@@ -15,11 +15,11 @@ export const useCounterStore = create((set, get) => ({
         }
         console.log("clientData=", clientData)
 
-        // set({count: get().count + clientData.count})
+        set({count: get().count + clientData.count})
 
         const data = await sendData(clientData)
         console.log(data)
-        set({ count: await data.count })
+        // set({ count: await data.count })
     },
     decrease: async () => {
         const userInput = parseInt(get().userInput);
@@ -27,9 +27,10 @@ export const useCounterStore = create((set, get) => ({
             count: userInput > 1 ? userInput : 1,
             operation: "dec"
         }
+        set({count: get().count - clientData.count})
         const data = await sendData(clientData)
         console.log(data)
-        set({ count: await data.count })
+        // set({ count: await data.count })
     },
     setUserInput: (newInput) => set({ userInput: newInput }),
 }));
